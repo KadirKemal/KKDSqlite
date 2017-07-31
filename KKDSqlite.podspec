@@ -5,6 +5,13 @@
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
+#
+#
+#
+# pod spec lint KKDSqlite.podspec --verbose --allow-warnings
+# pod lib lint --allow-warnings KKDSqlite.podspec
+# pod repo add KKDSqlite https://github.com/KadirKemal/KKDSqlite.git
+# pod repo push --allow-warnings KKDSqlite KKDSqlite.podspec
 
 Pod::Spec.new do |s|
 
@@ -66,7 +73,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -121,9 +128,8 @@ Pod::Spec.new do |s|
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
-  # s.library   = "iconv"
+  s.library   = "sqlite3"
   # s.libraries = "iconv", "xml2"
-
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
