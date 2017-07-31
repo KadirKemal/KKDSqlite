@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
   spec.version = "1.0.0"
   spec.summary = "Sqlite Helper Library for Objective C"
   spec.homepage = "https://github.com/KadirKemal/KKDSqlite"
-  spec.license = { 'MIT'}
+  spec.license = 'MIT'
   spec.authors = { "Kadir Kemal Dursun" => 'kkdursun@yahoo.com' }
   spec.social_media_url = "https://twitter.com/Kadir_Kemal"
 
