@@ -5,6 +5,13 @@
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
+#
+#
+#
+# pod spec lint KKDSqlite.podspec --verbose --allow-warnings
+# pod lib lint --allow-warnings KKDSqlite.podspec
+# pod repo add KKDSqlite https://github.com/KadirKemal/KKDSqlite.git
+# pod repo push --allow-warnings KKDSqlite KKDSqlite.podspec
 
 Pod::Spec.new do |s|
 
