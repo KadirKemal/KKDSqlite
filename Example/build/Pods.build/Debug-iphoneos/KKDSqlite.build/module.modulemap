@@ -1,0 +1,6 @@
+framework module KKDSqlite {
+  umbrella header "KKDSqlite-umbrella.h"
+
+  export *
+  module * { export * }
+}

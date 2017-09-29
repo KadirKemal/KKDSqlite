@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'KKDSqlite_Example' do
+  pod 'KKDSqlite', :path => '../'
+
+  target 'KKDSqlite_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  end
+end

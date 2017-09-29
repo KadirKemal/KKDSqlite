@@ -1,0 +1,6 @@
+framework module Pods_KKDSqlite_Tests {
+  umbrella header "Pods-KKDSqlite_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

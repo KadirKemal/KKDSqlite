@@ -1,0 +1,22 @@
+{
+  "name": "KKDSqlite",
+  "version": "0.1.0",
+  "summary": "A short description of KKDSqlite.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/kadirkemal/KKDSqlite",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kadirkemal": "kkdursun@yahoo.com"
+  },
+  "source": {
+    "git": "https://github.com/kadirkemal/KKDSqlite.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KKDSqlite/Classes/**/*"
+}
