@@ -57,7 +57,7 @@ static id sharedSqliteManagerInstance = nil;
         // Set the documents directory path to the documentsDirectory property.
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         self.documentsDirectory = [paths objectAtIndex:0];
-        
+                
         // Keep the database filename.
         self.databaseFilename = dbFilename;
         self.databasePath = [self.documentsDirectory stringByAppendingPathComponent:self.databaseFilename];
@@ -345,7 +345,7 @@ static id sharedSqliteManagerInstance = nil;
     
     // Close the database.
     [self closeDatabase:sqlite3Database];
-    return nil;
+    return result;
 }
 
 -(Boolean) openDatabase:(sqlite3 **)sqlite3Database{

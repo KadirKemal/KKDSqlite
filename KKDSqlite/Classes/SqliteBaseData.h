@@ -51,7 +51,6 @@
 
 
 @property int id;
-@property (nonatomic)id primaryColumnValue;
 
 
 /*!
@@ -68,6 +67,11 @@
  @brief returns the value of primary key
  */
 -(NSNumber *) primaryColumnValue;
+
+/*!
+ @brief set the value of primary field
+ */
+-(void)setPrimaryColumnValue:(NSNumber *)primaryColumnValue;
 
 /*!
  @brief resets value of primary column, default is setting zero

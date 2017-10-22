@@ -7,11 +7,14 @@
 //
 
 #import "kkdAppDelegate.h"
+#import "SqliteManager.h"
 
 @implementation kkdAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [SqliteManager configure:@"demoDB.sqlite"];
+    
     // Override point for customization after application launch.
     return YES;
 }

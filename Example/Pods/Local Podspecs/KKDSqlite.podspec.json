@@ -1,15 +1,15 @@
 {
   "name": "KKDSqlite",
   "version": "0.1.0",
-  "summary": "A short description of KKDSqlite.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "KKDSqlite helps you to manage your sqlite database on ios applications.",
+  "description": "KKDSqlite helps you to manage your sqlite database on ios applications. It is developed by ObjC.",
   "homepage": "https://github.com/kadirkemal/KKDSqlite",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "kadirkemal": "kkdursun@yahoo.com"
+    "Kadir Kemal Dursun": "kkdursun@yahoo.com"
   },
   "source": {
     "git": "https://github.com/kadirkemal/KKDSqlite.git",

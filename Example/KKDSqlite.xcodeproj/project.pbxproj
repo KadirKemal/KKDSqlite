@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07C5B9611F9CE2C900E538C2 /* newCountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C5B9601F9CE2C900E538C2 /* newCountryViewController.m */; };
+		07F8560F1F9C891D00EEE9A9 /* citiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8560E1F9C891D00EEE9A9 /* citiesViewController.m */; };
+		07F856121F9C892F00EEE9A9 /* countriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F856111F9C892F00EEE9A9 /* countriesViewController.m */; };
+		07F856191F9C913700EEE9A9 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F856181F9C913700EEE9A9 /* Country.m */; };
+		07F8561A1F9CA7BD00EEE9A9 /* demoDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 07F8560C1F9C87A800EEE9A9 /* demoDB.sqlite */; };
+		07F8561D1F9CA98D00EEE9A9 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8561C1F9CA98D00EEE9A9 /* City.m */; };
 		4E8936EA49E1A93AF23BF9EA /* Pods_KKDSqlite_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CC376F1CAD1F42B69E0A70 /* Pods_KKDSqlite_Tests.framework */; };
 		5C5216EA1E4423C469B81177 /* Pods_KKDSqlite_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE63AFC4B6D20CE0D205A19 /* Pods_KKDSqlite_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -15,7 +21,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* kkdAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* kkdAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* kkdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* kkdViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -37,8 +42,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07C5B95F1F9CE2C900E538C2 /* newCountryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newCountryViewController.h; sourceTree = "<group>"; };
+		07C5B9601F9CE2C900E538C2 /* newCountryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = newCountryViewController.m; sourceTree = "<group>"; };
+		07C5B9621F9CEB8400E538C2 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
+		07F8560C1F9C87A800EEE9A9 /* demoDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = demoDB.sqlite; sourceTree = "<group>"; };
+		07F8560D1F9C891D00EEE9A9 /* citiesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = citiesViewController.h; sourceTree = "<group>"; };
+		07F8560E1F9C891D00EEE9A9 /* citiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = citiesViewController.m; sourceTree = "<group>"; };
+		07F856101F9C892F00EEE9A9 /* countriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = countriesViewController.h; sourceTree = "<group>"; };
+		07F856111F9C892F00EEE9A9 /* countriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = countriesViewController.m; sourceTree = "<group>"; };
+		07F856171F9C913700EEE9A9 /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		07F856181F9C913700EEE9A9 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		07F8561B1F9CA98D00EEE9A9 /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		07F8561C1F9CA98D00EEE9A9 /* City.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
 		0FE63AFC4B6D20CE0D205A19 /* Pods_KKDSqlite_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KKDSqlite_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25A182F3839646C9743BA2E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		25A182F3839646C9743BA2E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* KKDSqlite_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKDSqlite_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,8 +66,6 @@
 		6003F59B195388D20070C39A /* KKDSqlite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKDSqlite-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* kkdAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkdAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* kkdAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkdAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* kkdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kkdViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* kkdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kkdViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* KKDSqlite_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKDSqlite_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -62,10 +77,10 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91CF63FB43CAE6326974A75B /* Pods-KKDSqlite_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKDSqlite_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKDSqlite_Tests/Pods-KKDSqlite_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		93FC3A586A25D592B0BAE271 /* KKDSqlite.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = KKDSqlite.podspec; path = ../KKDSqlite.podspec; sourceTree = "<group>"; };
+		93FC3A586A25D592B0BAE271 /* KKDSqlite.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KKDSqlite.podspec; path = ../KKDSqlite.podspec; sourceTree = "<group>"; };
 		9DE3EF932455B5BFED4804B8 /* Pods-KKDSqlite_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKDSqlite_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKDSqlite_Tests/Pods-KKDSqlite_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A578D49382A092FF8B4B60B1 /* Pods-KKDSqlite_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKDSqlite_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KKDSqlite_Example/Pods-KKDSqlite_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A6C1DC6C6E6E83154849F0CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A6C1DC6C6E6E83154849F0CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E81C4030047E2770F50E393F /* Pods-KKDSqlite_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKDSqlite_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KKDSqlite_Example/Pods-KKDSqlite_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07F856161F9C911400EEE9A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				07F856171F9C913700EEE9A9 /* Country.h */,
+				07F856181F9C913700EEE9A9 /* Country.m */,
+				07F8561B1F9CA98D00EEE9A9 /* City.h */,
+				07F8561C1F9CA98D00EEE9A9 /* City.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -132,11 +158,17 @@
 		6003F593195388D20070C39A /* Example for KKDSqlite */ = {
 			isa = PBXGroup;
 			children = (
+				07F856161F9C911400EEE9A9 /* Models */,
+				07F8560C1F9C87A800EEE9A9 /* demoDB.sqlite */,
 				6003F59C195388D20070C39A /* kkdAppDelegate.h */,
 				6003F59D195388D20070C39A /* kkdAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* kkdViewController.h */,
-				6003F5A6195388D20070C39A /* kkdViewController.m */,
+				07F8560D1F9C891D00EEE9A9 /* citiesViewController.h */,
+				07F8560E1F9C891D00EEE9A9 /* citiesViewController.m */,
+				07F856101F9C892F00EEE9A9 /* countriesViewController.h */,
+				07F856111F9C892F00EEE9A9 /* countriesViewController.m */,
+				07C5B95F1F9CE2C900E538C2 /* newCountryViewController.h */,
+				07C5B9601F9CE2C900E538C2 /* newCountryViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -179,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				93FC3A586A25D592B0BAE271 /* KKDSqlite.podspec */,
+				07C5B9621F9CEB8400E538C2 /* CHANGELOG.md */,
 				25A182F3839646C9743BA2E0 /* README.md */,
 				A6C1DC6C6E6E83154849F0CC /* LICENSE */,
 			);
@@ -281,6 +314,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				07F8561A1F9CA7BD00EEE9A9 /* demoDB.sqlite in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -395,8 +429,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* kkdAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* kkdViewController.m in Sources */,
+				07F8560F1F9C891D00EEE9A9 /* citiesViewController.m in Sources */,
+				07C5B9611F9CE2C900E538C2 /* newCountryViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				07F856191F9C913700EEE9A9 /* Country.m in Sources */,
+				07F8561D1F9CA98D00EEE9A9 /* City.m in Sources */,
+				07F856121F9C892F00EEE9A9 /* countriesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

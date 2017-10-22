@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E0852310FBCA88FB84E04CD57E72468A'
+               BlueprintIdentifier = '2B820137118FAAA66890DF5F06CE7F4E'
                BlueprintName = 'KKDSqlite'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'KKDSqlite.framework'>
