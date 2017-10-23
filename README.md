@@ -80,7 +80,7 @@ Create the models. While creating you models, the column names in the table and 
     return @"Cities";
 }
 
-//this method is important while saving county and it's cities in one transaction.
+//this method is important while saving country and it's cities in one transaction.
 //For foreign keys, you need to set value in this method.
 -(void)bindToParent:(SqliteBaseData *)parent{
     _countryId = parent.id;
@@ -109,7 +109,7 @@ Before executing any command, you should configure sqliteManager with database f
 
 ##  Operations
 ### Select
-For getting data from sqlite database you can use this methods
+For getting data from sqlite database you can use these methods;
 ```objc
 +(NSMutableArray <SqliteBaseData*>*) modelListFromDB:(NSDictionary *) params;
 
@@ -118,20 +118,21 @@ For getting data from sqlite database you can use this methods
 +(NSMutableArray <SqliteBaseData*>*) modelListWithCommand:(NSString *) command;
 ```
 
-####Examples
+#### Examples
+
 If you want to select all countries from the sqlite database, you only need to do
 ```objc
 NSMutableArray *countryList = [Country modelListFromDB:nil];
 ```
 
-If you want to do order
+If you want to order the result
 ```objc
 //do not forget to add "order by"
 //you can add more columns, for example "order by firstName desc, lastName asc"
 NSMutableArray *countryList = [Country modelListFromDB:nil orderBy:@"order by name"];
 ```
 
-If you want to select cities, which countryId = 1,  from the sqlite database, you only need to do
+If you want to select cities by filtering countryId = 1, you only need to do
 ```objc
 //you can add more parameters, keys values of dictionary should be one of the column names in cities table
 NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
@@ -140,7 +141,7 @@ NSMutableArray *cityList = [City modelListFromDB:params];
 
 If you want to execute your own command
 ```objc
-//You should select cities.*, because instance list of cityModel will be creating by result
+//You should select cities.*, because instance list of cityModel will be created by result
 NSMutableArray *cityList = [City modelListWithCommand:@"SELECT cities.* FROM cities INNER JOIN countries ..."];
 ```
 
@@ -149,16 +150,18 @@ If you have a Model that is inherited from SqliteBaseData, you only need to call
 If the id of the instance is 0, create method would be generated and executed.
 If the id is not 0, update method would be generated and executed.
 
-####Examples
+#### Examples
+
 ```objc
 City *city = [City new];
 city.name = @"Paris";
 [city saveMe];
-//as city id is 0, a new row would be added to cities table. After inserting, id of this instance will automatically set.
+//as city id is 0, a new row would be added to cities table.
+//After inserting, id of this instance will automatically set.
 ```
 
 ```objc
-NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"id", nil];
 NSMutableArray *cityList = [City modelListFromDB:params];
 
 City *city = [cityList objectAtIndex:0];
@@ -170,13 +173,13 @@ city.name = @"Paris";
 ### Delete
 If you have a Model that is inherited from SqliteBaseData, you only need to call deleteMe method to delete.
 
-####Examples
+#### Examples
 ```objc
-NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"id", nil];
 NSMutableArray *cityList = [City modelListFromDB:params];
 
 City *city = [cityList objectAtIndex:0];
-[city deleteeMe];
+[city deleteMe];
 ```
 
 
@@ -190,7 +193,8 @@ According to your purpose, you can use one of these methods;
 -(BOOL)deleteMeWith:(NSArray <SqliteBaseData*>*) dataList;
 ```
 
-If you call saveMeWithChildren method, after saving (creating or updating) the parent instance, bindToParent method would be called for every instances in dataList.
+If you use saveMeWithChildren method;
+after saving (creating or updating) the parent instance, bindToParent method would be called for every instances in dataList.
 
 ####Example
 ```objc
@@ -211,8 +215,9 @@ NSMutableArray<SqliteBaseData *> *cityList = [NSMutableArray new];
 [cityList addObject:[[City alloc] initWithName:@"city 5"];
 
 [country saveMeWithChildren:cityList];
-//after country is saved, id value of the instance will be set.
-//before saving cityList, bindToParent method will be called for every instances and for this example the countryId of city instances will be set
+//after country is saved, id value of the country will be set.
+//before saving cityList, bindToParent method will be called for every instances
+//and for this example the countryId of city instances will be set
 //If saveMeWith method is used, bindToParent method will not be called
 ```
 
