@@ -196,7 +196,7 @@ According to your purpose, you can use one of these methods;
 If you use saveMeWithChildren method;
 after saving (creating or updating) the parent instance, bindToParent method would be called for every instances in dataList.
 
-####Example
+#### Examples
 ```objc
 //in City.m file
 -(void)bindToParent:(SqliteBaseData *)parent{
@@ -221,7 +221,7 @@ NSMutableArray<SqliteBaseData *> *cityList = [NSMutableArray new];
 //If saveMeWith method is used, bindToParent method will not be called
 ```
 
-####Example
+#### Examples
 ```objc
 NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"id", nil];
 NSMutableArray *countryList = [Country modelListFromDB:params];
