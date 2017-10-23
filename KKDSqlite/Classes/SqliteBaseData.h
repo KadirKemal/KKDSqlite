@@ -54,11 +54,6 @@
 
 
 /*!
- @brief Selects the row from class table and initializes the instance that's primary key is 'id'
- */
--(instancetype) initWithId:(int) id;
-
-/*!
  @brief default value is 'id'
  */
 -(NSString *) primaryColumnName;

@@ -109,28 +109,126 @@ Before executing any command, you should configure sqliteManager with database f
 
 ##  Operations
 ### Select
+For getting data from sqlite database you can use this methods
+```objc
++(NSMutableArray <SqliteBaseData*>*) modelListFromDB:(NSDictionary *) params;
 
-### Create
-### Update
++(NSMutableArray <SqliteBaseData*>*) modelListFromDB:(NSDictionary *) params orderBy:(NSString*) orderBy;
+
++(NSMutableArray <SqliteBaseData*>*) modelListWithCommand:(NSString *) command;
+```
+
+####Examples
+If you want to select all countries from the sqlite database, you only need to do
+```objc
+NSMutableArray *countryList = [Country modelListFromDB:nil];
+```
+
+If you want to do order
+```objc
+//do not forget to add "order by"
+//you can add more columns, for example "order by firstName desc, lastName asc"
+NSMutableArray *countryList = [Country modelListFromDB:nil orderBy:@"order by name"];
+```
+
+If you want to select cities, which countryId = 1,  from the sqlite database, you only need to do
+```objc
+//you can add more parameters, keys values of dictionary should be one of the column names in cities table
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
+NSMutableArray *cityList = [City modelListFromDB:params];
+```
+
+If you want to execute your own command
+```objc
+//You should select cities.*, because instance list of cityModel will be creating by result
+NSMutableArray *cityList = [City modelListWithCommand:@"SELECT cities.* FROM cities INNER JOIN countries ..."];
+```
+
+### Create and Update
+If you have a Model that is inherited from SqliteBaseData, you only need to call saveMe method to create or update.
+If the id of the instance is 0, create method would be generated and executed.
+If the id is not 0, update method would be generated and executed.
+
+####Examples
+```objc
+City *city = [City new];
+city.name = @"Paris";
+[city saveMe];
+//as city id is 0, a new row would be added to cities table. After inserting, id of this instance will automatically set.
+```
+
+```objc
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
+NSMutableArray *cityList = [City modelListFromDB:params];
+
+City *city = [cityList objectAtIndex:0];
+city.name = @"Paris";
+[city saveMe];
+//as city id is not 0, the related row will be updated.
+```
+
 ### Delete
+If you have a Model that is inherited from SqliteBaseData, you only need to call deleteMe method to delete.
+
+####Examples
+```objc
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
+NSMutableArray *cityList = [City modelListFromDB:params];
+
+City *city = [cityList objectAtIndex:0];
+[city deleteeMe];
+```
 
 
-## Example
+### Create, Update or Delete many instances in one transaction
+According to your purpose, you can use one of these methods;
+```objc
+-(BOOL)saveMeWith:(NSArray <SqliteBaseData*>*) dataList;
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-In demo project, you will see how to create, delete, update data and also how to save or delete more than one data in one transaction.
+-(BOOL)saveMeWithChildren:(NSArray <SqliteBaseData*>*) dataList;
 
-In the demo project, countries are listed and when you select one of the countries, the cities of selected country will be listed.
+-(BOOL)deleteMeWith:(NSArray <SqliteBaseData*>*) dataList;
+```
 
+If you call saveMeWithChildren method, after saving (creating or updating) the parent instance, bindToParent method would be called for every instances in dataList.
 
+####Example
+```objc
+//in City.m file
+-(void)bindToParent:(SqliteBaseData *)parent{
+    _countryId = parent.id;
+}
+```
 
-There is a sqlite database in the sample project (demoDB.sqlite). In this database, there are two tables.
+```objc
+Country *country = [[Country alloc] initWithName:@"A Name"];
 
+NSMutableArray<SqliteBaseData *> *cityList = [NSMutableArray new];
+[cityList addObject:[[City alloc] initWithName:@"city 1"];
+[cityList addObject:[[City alloc] initWithName:@"city 2"];
+[cityList addObject:[[City alloc] initWithName:@"city 3"];
+[cityList addObject:[[City alloc] initWithName:@"city 4"];
+[cityList addObject:[[City alloc] initWithName:@"city 5"];
 
+[country saveMeWithChildren:cityList];
+//after country is saved, id value of the instance will be set.
+//before saving cityList, bindToParent method will be called for every instances and for this example the countryId of city instances will be set
+//If saveMeWith method is used, bindToParent method will not be called
+```
 
+####Example
+```objc
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"id", nil];
+NSMutableArray *countryList = [Country modelListFromDB:params];
 
-## Requirements
+Country *country = [countryList objectAtIndex:1];
 
+params = [NSDictionary dictionaryWithObjectsAndKeys:@(country.id), @"countryId", nil];
+NSMutableArray *cityList = [City modelListFromDB:params];
+
+//to delete all items in one transaction
+[country deleteMeWith:cityList];
+```
 
 ## Author
 

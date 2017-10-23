@@ -67,16 +67,6 @@
     return objList;
 }
 
-
-
--(instancetype) initWithId:(int) id{
-    self = [super init];
-    if(self){
-        //todo
-    }
-    return self;
-}
-
 -(NSString *) primaryColumnName{
     return @"id";
 }
