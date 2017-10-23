@@ -35,8 +35,16 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    _countryList = [Country modelListFromDB:nil orderBy:@"order by name"];
-    [_table reloadData];
+    //_countryList = [Country modelListFromDB:nil orderBy:@"order by name"];
+    //[_table reloadData];
+    
+    [Country modelListFromDB:nil
+                     orderBy:@"order by name"
+                     success:^(NSMutableArray<SqliteBaseData *> *list) {
+                         _countryList = list;
+                         [_table reloadData];
+                     }
+     ];
 }
 
 

@@ -26,14 +26,44 @@
     return [self convertSqliteSelectResultToModelArray:result];
 }
 
++(void) modelListFromDB:(NSDictionary *) params success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSMutableArray <SqliteBaseData*>* result = [self modelListFromDB:params];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callback(result);
+        });
+    });
+}
+
 +(NSMutableArray <SqliteBaseData*>*) modelListFromDB:(NSDictionary *) params orderBy:(NSString*) orderBy{
     SqliteSelectResult *result = [[SqliteManager sharedInstance] loadDataFromDB:[self tableName] parameters:params orderBy:orderBy error:nil];
     return [self convertSqliteSelectResultToModelArray:result];
 }
 
++(void) modelListFromDB:(NSDictionary *) params orderBy:(NSString*) orderBy success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSMutableArray <SqliteBaseData*>* result = [self modelListFromDB:params orderBy:orderBy];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callback(result);
+        });
+    });
+}
+
 +(NSMutableArray <SqliteBaseData*>*) modelListWithCommand:(NSString *) command{
     SqliteSelectResult *result = [[SqliteManager sharedInstance] loadDataFromDB:command error:nil];
     return [self convertSqliteSelectResultToModelArray:result];
+}
+
++(void) modelListWithCommand:(NSString *) command success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSMutableArray <SqliteBaseData*>* result = [self modelListWithCommand:command];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callback(result);
+        });
+    });
 }
 
 +(NSMutableArray *) convertSqliteSelectResultToModelArray:(SqliteSelectResult *) result{

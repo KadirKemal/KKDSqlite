@@ -27,18 +27,24 @@
 +(NSString *) tableName;
 
 /*!
- @brief The method generates a sql command by using params. Params keys should be one of the column names in the table. The generated creates SqliteBaseData instance array by executing the generated command on database.
- 
- @param command the sql command that will be executed
- */
+ @brief The method generates a sql command by using params. Params keys should be one of the column names in the table. It creates SqliteBaseData instance array by executing the generated command on database.
+  */
 +(NSMutableArray <SqliteBaseData*>*) modelListFromDB:(NSDictionary *) params;
 
 /*!
- @brief The method generates a sql command by using params and orderBy.  Params keys and orderBy should be one of the column names in the table. The generated creates SqliteBaseData instance array by executing the generated command on database.
- 
- @param command the sql command that will be executed
- */
+ @brief The method generates a sql command by using params. Params keys should be one of the column names in the table. It creates SqliteBaseData instance array by executing the generated command on database.
+  */
++(void) modelListFromDB:(NSDictionary *) params success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback;
+
+/*!
+ @brief The method generates a sql command by using params and orderBy.  Params keys and orderBy should be one of the column names in the table. It creates SqliteBaseData instance array by executing the generated command on database.
+  */
 +(NSMutableArray <SqliteBaseData*>*) modelListFromDB:(NSDictionary *) params orderBy:(NSString*) orderBy;
+
+/*!
+ @brief The method generates a sql command by using params and orderBy.  Params keys and orderBy should be one of the column names in the table. It creates SqliteBaseData instance array by executing the generated command on database.
+ */
++(void) modelListFromDB:(NSDictionary *) params orderBy:(NSString*) orderBy success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback;
 
 /*!
  @brief The method creates SqliteBaseData instance array by executing the command on database.
@@ -47,7 +53,12 @@
  */
 +(NSMutableArray <SqliteBaseData*>*) modelListWithCommand:(NSString *) command;
 
-
+/*!
+ @brief The method creates SqliteBaseData instance array by executing the command on database.
+ 
+ @param command the sql command that will be executed
+ */
++(void) modelListWithCommand:(NSString *) command success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback;
 
 
 @property int id;

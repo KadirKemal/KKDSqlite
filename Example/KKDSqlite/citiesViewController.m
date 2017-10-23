@@ -22,7 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _cityList = [City modelListFromDB:[NSDictionary dictionaryWithObjectsAndKeys:@(_country.id), @"countryId", nil]];
+    //_cityList = [City modelListFromDB:[NSDictionary dictionaryWithObjectsAndKeys:@(_country.id), @"countryId", nil]];
+    
+    [City modelListFromDB:[NSDictionary dictionaryWithObjectsAndKeys:@(_country.id), @"countryId", nil]
+                  success:^(NSMutableArray<SqliteBaseData *> * list) {
+                      _cityList = list;
+                      [_table reloadData];
+                  }
+     ];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
