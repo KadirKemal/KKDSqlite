@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/KKDSqlite.svg?style=flat)](http://cocoapods.org/pods/KKDSqlite)
 [![Platform](https://img.shields.io/cocoapods/p/KKDSqlite.svg?style=flat)](http://cocoapods.org/pods/KKDSqlite)
 
-KKDSqlite helps you to manage your sqlite database on ios applications.
+KKDSqlite helps you to manage sqlite database on ios applications.
 
 ## Installation
 
