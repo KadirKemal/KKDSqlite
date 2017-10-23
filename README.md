@@ -145,6 +145,62 @@ If you want to execute your own command
 NSMutableArray *cityList = [City modelListWithCommand:@"SELECT cities.* FROM cities INNER JOIN countries ..."];
 ```
 
+### Select operations with callback
+callback is executed in main thread.
+
+```objc
++(void) modelListFromDB:(NSDictionary *) params success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback;
+
++(void) modelListFromDB:(NSDictionary *) params orderBy:(NSString*) orderBy success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback;
+
++(void) modelListWithCommand:(NSString *) command success:(void(^)(NSMutableArray <SqliteBaseData*>*))callback;
+```
+
+#### Examples
+If you want to select all countries from the sqlite database with callback
+```objc
+[Country modelListFromDB:nil
+                 success:^(NSMutableArray<SqliteBaseData *> *list) {
+                     _countryList = list;
+                     [_table reloadData];
+                 }
+];
+```
+
+If you want to order the result
+```objc
+[Country modelListFromDB:nil
+                 orderBy:@"order by name"
+                 success:^(NSMutableArray<SqliteBaseData *> *list) {
+                     _countryList = list;
+                     [_table reloadData];
+                 }
+];
+```
+
+If you want to select cities by filtering countryId = 1, you only need to do
+```objc
+NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@(1), @"countryId", nil];
+[City modelListFromDB:params
+              success:^(NSMutableArray<SqliteBaseData *> *list) {
+                  _cityList = list;
+                  [_table reloadData];
+              }
+];
+```
+
+If you want to execute your own command
+```objc
+//You should select cities.*, because instance list of cityModel will be created by result
+[City modelListWithCommand:@"SELECT cities.* FROM cities INNER JOIN countries ..."
+                   success:^(NSMutableArray<SqliteBaseData *> *list) {
+                       _cityList = list;
+                       [_table reloadData];
+                   }
+];
+```
+
+
 ### Create and Update
 If you have a Model that is inherited from SqliteBaseData, you only need to call saveMe method to create or update.
 If the id of the instance is 0, create method would be generated and executed.
