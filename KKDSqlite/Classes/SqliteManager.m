@@ -376,7 +376,7 @@ static id sharedSqliteManagerInstance = nil;
         // Execute the query.
         int executeQueryResults = sqlite3_step(compiledStatement);
         if (executeQueryResults == SQLITE_DONE) {
-            lastInsertedRowID = sqlite3_last_insert_rowid(sqlite3Database);
+            lastInsertedRowID = (int)sqlite3_last_insert_rowid(sqlite3Database);
         }else{
             // If could not execute the query show the error message on the debugger.
             NSLog(@"DB Error: %s", sqlite3_errmsg(sqlite3Database));

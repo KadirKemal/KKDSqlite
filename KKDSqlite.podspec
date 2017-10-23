@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-KKDSqlite helps you to manage your sqlite database on ios applications. It is developed by ObjC.
+KKDSqlite helps you to manage sqlite database on ios applications. It is developed by ObjC.
                        DESC
 
   s.homepage         = 'https://github.com/kadirkemal/KKDSqlite'
