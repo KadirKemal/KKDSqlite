@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KKDSqlite'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'KKDSqlite helps you to manage your sqlite database on ios applications.'
 
 # This description is used to generate tags and improve search results.
